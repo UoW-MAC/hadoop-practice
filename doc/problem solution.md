@@ -19,4 +19,4 @@ DataNode cannot show in webpage:
 About HIVE version
 -----------------------------------------
 	recommand to install hive-1.2.1 
-	because in our experience there is a problem of starting hiveserver2 
+	because in our experience there is a problem of starting hiveserver2
