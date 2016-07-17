@@ -77,26 +77,26 @@
         </property>
     </configuration>
 ######mapred-site.xml
-<configuration>
-    <property>
-        <name>mapreduce.framework.name</name>
-        <value>yarn</value>
-    </property>
-    <property>
-        <name>mapreduce.jobhistory.address</name>
-        <value>master:10020</value>
-    </property>
-    <property>
-        <name>mapreduce.jobhistory.webapp.address</name>
-        <value>master:19888</value>
-    </property>
+    <configuration>
+        <property>
+            <name>mapreduce.framework.name</name>
+            <value>yarn</value>
+        </property>
+        <property>
+            <name>mapreduce.jobhistory.address</name>
+            <value>master:10020</value>
+        </property>
+        <property>
+            <name>mapreduce.jobhistory.webapp.address</name>
+            <value>master:19888</value>
+        </property>
 
-</configuration>
+    </configuration>
 
-yarn-site.xml
-<configuration>
-    <property>
-        <name>yarn.nodemanager.aux-services</name>
+######yarn-site.xml
+    <configuration>
+        <property>
+            <name>yarn.nodemanager.aux-services</name>
         <value>mapreduce_shuffle</value>
     </property>
     <property>
