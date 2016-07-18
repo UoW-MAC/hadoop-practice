@@ -146,11 +146,11 @@
 
 4. Install Hadoop
 -------------------------------------------------------
-Initial namenode:
+####Initial namenode:
     hadoop namenode –format
-Start Hadoop:
+####Start Hadoop:
     ./start-all.sh
-Use jps to check processes
+####Use jps to check processes
     4290 ResourceManager
     4421 NodeManager
     5867 Jps
