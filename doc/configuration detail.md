@@ -1,4 +1,4 @@
-1. without password login node
+1. Without password login node
 -------------------------------------
 ####master node:
     ssh-keygen –t rsa –p
@@ -8,7 +8,7 @@
 ####copy to all slaves:
     scp /home/hadoop/.ssh/ authorized_keys  hadoop@slave01.node:~/
 
-2. install java environment
+2. Install java environment
 -----------------------------------------------
 #####Download and unzip jdk-8u91-linux-x64.tar.gz and modify environment variable  
 
@@ -22,7 +22,7 @@
     source /etc/profile
     java  –version 
     
-3. install Hadoop
+3. Install Hadoop
 -------------------------------------------------------
 ####    Download and unzip Hadoop-2.6.4.tar.gz
     sudo cp hadoop-2.6.4  /usr
@@ -143,3 +143,17 @@
     master
     slave01
     slave02
+
+4. Install Hadoop
+-------------------------------------------------------
+Initial namenode:
+    hadoop namenode –format
+Start Hadoop:
+    ./start-all.sh
+Use jps to check processes
+    4290 ResourceManager
+    4421 NodeManager
+    5867 Jps
+    3771 NameNode
+    3900 DataNode
+    4141 SecondaryNameNode
