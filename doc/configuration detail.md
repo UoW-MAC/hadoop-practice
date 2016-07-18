@@ -32,27 +32,29 @@
     sudo nano /etc/hosts
 ####    Modify 7 files in hadoop/etc/hadoop
 ######core-site.xml
-    <property>
-        <name>fs.defaultFS</name>
-        <value>hdfs://master:9000</value>
-    </property>
-    <property>
-        <name>io.file.buffer.size</name>
-        <value>131072</value>
-    </property>
-    <property>
-        <name>hadoop.tmp.dir</name>
-        <value>file:/usr/ hadoop-2.6.4/tmp</value>
-        <description>Abase for other temporary directories.</description>
-    </property>
-    <property>
-        <name>hadoop.proxyuser.hduser.hosts</name>
-        <value>*</value>
-    </property>
-    <property>
-        <name>hadoop.proxyuser.hduser.groups</name>
-        <value>*</value>
-    </property>
+    <configuration>
+        <property>
+            <name>fs.defaultFS</name>
+            <value>hdfs://master:9000</value>
+        </property>
+        <property>
+            <name>io.file.buffer.size</name>
+            <value>131072</value>
+        </property>
+        <property>
+            <name>hadoop.tmp.dir</name>
+            <value>file:/usr/ hadoop-2.6.4/tmp</value>
+            <description>Abase for other temporary directories.</description>
+        </property>
+        <property>
+            <name>hadoop.proxyuser.hduser.hosts</name>
+            <value>*</value>
+        </property>
+        <property>
+            <name>hadoop.proxyuser.hduser.groups</name>
+            <value>*</value>
+        </property>
+    <configuration>
 ###### hdfs-site.xml
     <configuration>
         <property>
@@ -65,7 +67,7 @@
         </property>
         <property>
             <name>dfs.datanode.data.dir</name>
-            <value>file:/usr/ hadoop-2.6.4/dfs/data</value>
+            <value>file:/usr/hadoop-2.6.4/dfs/data</value>
         </property>
         <property>
             <name>dfs.replication</name>
@@ -90,9 +92,7 @@
             <name>mapreduce.jobhistory.webapp.address</name>
             <value>master:19888</value>
         </property>
-
     </configuration>
-
 ######yarn-site.xml
     <configuration>
         <property>
@@ -123,5 +123,23 @@
             <name>yarn.resourcemanager.webapp.address</name>
             <value>master:8088</value>
         </property>
-
-</configuration>
+    </configuration>
+######hadoop-env.sh
+    The java implementation to use.
+    export JAVA_HOME=/usr/java/jdk1.8
+######yarn-env.sh
+    # some Java parameters
+    export JAVA_HOME=/usr/java/jdk1.8
+    if [ "$JAVA_HOME" != "" ]; then
+        #echo "run java in $JAVA_HOME"
+        JAVA_HOME=$JAVA_HOME
+    fi
+  
+    if [ "$JAVA_HOME" = "" ]; then
+        echo "Error: JAVA_HOME is not set."
+        exit 1
+    fi
+######slaves
+    master
+    slave01
+    slave02
