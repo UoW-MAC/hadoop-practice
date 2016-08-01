@@ -2,7 +2,7 @@
 -------------------------------------
 ####master node:
     ssh-keygen –t rsa –p
-    cat ~/id_rsa.pub  ~/.ssh/authorized_keys
+    cat ~/id_rsa.pub >> ~/.ssh/authorized_keys
 ####slave node:
     mkdir .ssh
 ####copy to all slaves:
